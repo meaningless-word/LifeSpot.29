@@ -5,6 +5,7 @@
     <title>LifeSpot</title>
     <!--Подключение стилей по отностиельному пути из внешнего файла-->
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
+    <!-- Внешний скрипт с функциями -->
     <script type="text/javascript" src="../Static/JS/index.js"></script>
     <!--<script>
        // alert("Приветствуем на LifeSpot! " + new Date().toLocaleString());
@@ -29,6 +30,18 @@
             window.location.href = "http://www.google.com"
         }
     </script>-->
+    <!-- Внутренний скрипт с вызовами функций -->
+    <script>
+        //handleSession();
+        // Вызов по имени переменной
+        // sessionHandler();
+
+        // Создадим и обработаем сессию
+        let session = handleSession();
+
+        // Логируем в консоль.
+        sessionLog(session);
+    </script>
 </head>
 
 <!--Хедер страницы находится над тегом body-->
@@ -38,8 +51,10 @@
     <!--Параграф-->
     <p>Покажем, что происходит прямо сейчас</p>
 
-    <input type="text" oninput="javascript:Filter(this)" size="50%">
-
+    <!--<input type="text" oninput="filterContent()/* Вызов функции */" size="50%">-->
+    <!--<input type="text" oninput="contentFilter() /* Вызов по имени переменной */" size="50%">-->
+    <!--Перепишите функцию, отвечающую за фильтрацию данных для пользователя так, чтобы она принимала введённые пользователем данные в виде аргумента.-->
+    <input type="text" oninput="filterContent(document.getElementsByTagName('input')[0].value.toLowerCase() /* Аргумент - значение, введённое пользователем */)" size=50%>
 </header>
 
 <!--Сайд-бар страницы (пока все ссылки ведут на главную)-->
@@ -68,6 +83,7 @@
         </div>
     </div>
 </body>
+
 
 <!--Футер страницы находится под основной частью (body)-->
 <footer>
