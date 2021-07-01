@@ -4,4 +4,8 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Views\about.html~RF5da7529.TMP" />
+    </ItemGroup>
+
 </Project>
